@@ -1,0 +1,73 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.lineup{
+    h3,p{
+        text-align: center;
+        color: v.$blanco;
+        font-weight: 700;
+    }
+    padding: 5rem 0;
+    background: v.$rosa;
+    .dia{
+        margin: 8rem 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .escenarios_contenedor{
+        max-width: 120rem;
+        margin: 0 auto;
+        @include m.tablet{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap:4rem ;
+        }
+        
+    }
+}
+.escenario{
+    padding: 2rem 0 0 0;
+    p{
+        color: v.$negro;
+    }
+    .nombre_escenario:after{
+        content: "";
+        display: block;
+        width: 20rem;
+        height: 10rem;
+        background-size: 15rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: 2rem auto;
+    }
+}
+.calendario{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+        padding: 2.5rem;
+        font-weight: 700;
+        span{
+            font-weight: 400;
+        }
+    }
+}
+.bg-verde{
+    background: v.$azul;
+    li:nth-child(2n+1){
+        background-color: darken(v.$azul, 10%);
+    }
+}
+.bg-amarillo{
+    background: v.$amarillo;
+    li:nth-child(2n+1){
+        background-color: darken(v.$amarillo, 20%);
+    }
+}
+.EM .nombre_escenario:after{
+    background-image: url(../img/icono_edm.png);
+}
+.Rap .nombre_escenario:after{
+    background-image: url(../img/icono_rock.png);
+}

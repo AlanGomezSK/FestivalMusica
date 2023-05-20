@@ -1,0 +1,62 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.galeria{
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+    h3{
+        text-align: center;
+        color: v.$blanco
+    }
+}
+.galeria_img{
+    display: grid;
+    padding: 0;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    @include m.telefono{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    @include m.tablet{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+    @include m.desktop{
+        grid-template-columns: repeat(6, 1fr);
+        gap: 2rem;
+    }
+}
+.overlay{
+    background: rgba(0,0,0,.5);
+    display: grid;
+    overflow: hidden;
+    place-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    picture{
+        grid-row: 1/2;
+        display: block;
+        max-width: 80rem;
+    }
+}
+.boton{
+    font-size: 3rem;
+    display: grid;
+    place-items: center;
+    background: white;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 3rem;
+    font-weight: 700;
+    &:hover{
+        cursor: pointer;
+    }
+}

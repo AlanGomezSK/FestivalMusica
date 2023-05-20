@@ -1,0 +1,12 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.site_footer{
+    padding: 2rem 0;
+    background-color: black;
+    p{
+        margin: 0;
+        color: white;
+        text-align: center;
+    }
+}
